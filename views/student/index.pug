@@ -1,0 +1,21 @@
+extends ../layouts/main.pug
+block content
+  .container
+    header
+      h1= title
+
+    div
+      table.table.table-striped
+        thead
+          tr
+            th First Name
+            th Last Name
+            th Status
+        
+        tbody
+          each student in students
+            tr
+              td
+                a(href=`/students/${student.id}`)= student.firstname
+              td= student.lastname
+              td= student.status

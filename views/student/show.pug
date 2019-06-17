@@ -1,0 +1,9 @@
+extends ../layouts/main.pug
+block content
+  .container
+    header
+      h1= student.title
+      small= student.status.toLowerCase()
+
+    div
+      = student.content || "Your story is processing..."
