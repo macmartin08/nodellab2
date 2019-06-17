@@ -1,6 +1,8 @@
 {
   "name": "nodelab2",
   "version": "1.0.0",
+  "engines": { 
+  "node": "10.15.3" },
   "description": "",
   "main": "app.js",
   "scripts": {
