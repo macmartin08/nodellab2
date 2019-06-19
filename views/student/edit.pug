@@ -1,0 +1,24 @@
+extends ../layouts/main.pug
+block content
+  .container
+    header
+      h1= `Edit ${student.firstname}`
+
+  div
+      form(action="/student/update", method="POST")
+        .form-group
+          label First Name
+          input.form-control(name="student[firstname]", value=(student ? student.firstname : null), required)
+
+        .form-group
+          label Last Name
+          input.form-control(name="student[lastname]", required,value=(student ? student.lastname : null))
+
+        .form-group
+          label Status
+          select.form-control(name="student[status]", required)
+            option(value="FULL-TIME") Full-Time
+            option(value="PART-TIME") Part-time
+        
+        .form-group
+          button.btn.btn-dark(type="submit") Submit

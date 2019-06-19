@@ -16,6 +16,12 @@ block content
           each student in students
             tr
               td
-                a(href=`/students/${student.id}`)= student.firstname
+                a(href=`/student/${student.id}`)= student.firstname
               td= student.lastname
               td= student.status
+              td
+                a(href=`/student/${student.id}/edit`) edit
+                 = ` | `
+                form.destroy(action=`/student/destroy`, method="POST")
+                  input(type="hidden", name="student[id]", value=student.id)
+                  input.destroy(type="submit", value="delete")
